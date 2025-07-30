@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Win a $500 LEGO Voucher!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #d32f2f;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+    }
+
+    .wheel {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 6px solid #ddd;
+      background: conic-gradient(
+        #f44336 0deg 60deg,
+        #ffeb3b 60deg 120deg,
+        #4caf50 120deg 180deg,
+        #2196f3 180deg 240deg,
+        #9c27b0 240deg 300deg,
+        #ff9800 300deg 360deg
+      );
+      animation: spin 4s ease-out 1;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(2160deg); }
+    }
+
+    .pointer {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 25px solid #e91e63;
+    }
+
+    .timer, .stock {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .timer { color: #e53935; }
+    .stock { color: #388e3c; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #ff5722;
+      color: white;
+      padding: 16px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e64a19;
+    }
+
+    .comments {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .comment {
+      background: #f1f1f1;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .comment strong {
+      color: #2c3e50;
+    }
+
+    .fb-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎉 You’ve Been Selected!</h1>
+    <p>Spin the wheel for a chance to grab a <strong>$500 LEGO Voucher</strong> instantly!</p>
+
+    <div class="wheel-container">
+      <div class="pointer"></div>
+      <div class="wheel" id="wheel"></div>
+    </div>
+
+    <div class="timer">⏰ Hurry! Offer expires in <span id="countdown">05:00</span></div>
+    <div class="stock">🟢 Only <strong>12</strong> vouchers left today!</div>
+
+    <a class="btn" href="https://uplvlrwrds.com/83799/960" target="_blank">
+      🎁 Claim Your $500 LEGO Voucher
+    </a>
+
+    <div class="comments">
+      <h3>💬 What People Are Saying</h3>
+
+      <div class="comment">
+        <img class="fb-avatar" src="https://i.pravatar.cc/36?img=11" alt=""/>
+        <strong>Anna L:</strong> OMG I actually got one! My son is going to freak out 😍
+      </div>
+
+      <div class="comment">
+        <img class="fb-avatar" src="https://i.pravatar.cc/36?img=22" alt=""/>
+        <strong>Kelvin M:</strong> Just used the voucher today – works 100% 💯
+      </div>
+
+      <div class="comment">
+        <img class="fb-avatar" src="https://i.pravatar.cc/36?img=35" alt=""/>
+        <strong>Fatima K:</strong> At first I thought it was fake but I got mine within 2 mins!
+      </div>
+
+      <div class="comment">
+        <img class="fb-avatar" src="https://i.pravatar.cc/36?img=44" alt=""/>
+        <strong>Brian J:</strong> If you’re seeing this, don’t waste time – spin now!
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer
+    let seconds = 300;
+    const countdownEl = document.getElementById("countdown");
+
+    function updateTimer() {
+      const min = Math.floor(seconds / 60);
+      const sec = seconds % 60;
+      countdownEl.textContent = \`\${min.toString().padStart(2, '0')}:\${sec.toString().padStart(2, '0')}\`;
+      if (seconds > 0) {
+        seconds--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+    updateTimer();
+  </script>
+
+</body>
+</html>
